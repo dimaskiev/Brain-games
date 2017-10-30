@@ -1,0 +1,30 @@
+{
+    "name": "brain-games-dimaskiev",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "bin": {
+        "brain-games": "dist/bin/brain-games.js"
+    },
+    "scripts": {
+        "babel-node": "babel-node",
+        "build": "set NODE_ENV=production&&babel src --out-dir dist --source-maps inline",
+        "prepublish": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dimaskiev/project-lvl1-s160.git"
+    },
+    "author": "romanchuk",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dimaskiev/project-lvl1-s160/issues"
+    },
+    "homepage": "https://github.com/dimaskiev/project-lvl1-s160#readme",
+    "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "babel-preset-stage-0": "^6.24.1"
+    }
+}
