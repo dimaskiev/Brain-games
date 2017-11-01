@@ -1,4 +1,4 @@
-import { greeting, toGame} from '..';
+import { greeting, toGame } from '..';
 
 export default () => {
   const gameName = 'What is the result of the expression?';

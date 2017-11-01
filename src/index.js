@@ -16,35 +16,34 @@ export const printResult = (result, Answer, userName) => {
 
 export const getNumber = () => {
   const date = new Date();
-  const number = Math.floor(Math.random(1) * 75 + date.getDate() * (date.getDate() + 2) / (date.getDate() * 5));
+  const number = Math.floor((Math.random(1) * 50) + (date.getDate() * 5));
   return number;
 };
 
-export const isEven = (num) => ((num %2 ) === 0)?'yes':'no';
+export const isEven = (num) => {
+  if ((num % 2) === 0) return 'yes';
+  return 'no';
+};
 
 const getAnswer = () => readlineSync.question('Answer: ');
 
 const makeQuestion = (game, numOne, numTwo, operand) => {
-  switch(game){
-    case 'even':{
-      return numOne
-    };
-    break;
-    case 'calc':{
+  switch (game) {
+    case 'even':
+      return numOne;
+    case 'calc':
       return `${numOne} ${operand} ${numTwo}`;
-    };
     default:
-    break;
-
+      break;
   }
-}
+  return numOne;
+};
 
 const operands = (count) => {
   if (count === 1) return '+';
   else if (count === 2) return '-';
   return '*';
 };
-
 
 const getResultCals = (numOne, numTwo, operand) => {
   switch (operand) {
@@ -55,38 +54,36 @@ const getResultCals = (numOne, numTwo, operand) => {
     case '*':
       return numOne * numTwo;
     default:
-    break;
+      break;
   }
+  return numOne / numTwo;
 };
 
 const correctAnswers = (game, numOne, numTwo, operand) => {
-  switch(game){
-    case 'even':{
+  switch (game) {
+    case 'even': {
       return isEven(numOne);
-    };
-    break;
-    case 'calc':{
-      return getResultCals (numOne, numTwo, operand);
-    };
+    }
+    case 'calc': {
+      return getResultCals(numOne, numTwo, operand);
+    }
     default:
-    break;
-
+      break;
   }
+  return true;
 };
-
 
 export const toGame = (userName, game) => {
   let rightAnswer = 0;
   let countAnswer = 1;
-  
   while (countAnswer <= 3) {
     const numOne = getNumber();
     const numTwo = getNumber();
-    let question = makeQuestion(game, numOne, numTwo, operands(countAnswer));  
+    const question = makeQuestion(game, numOne, numTwo, operands(countAnswer));
     console.log(`Question: ${question}`);
     const Answer = getAnswer(game);
-    const result = correctAnswers(game, numOne, numTwo, operands(countAnswer))
-    if (Answer === String(result)){
+    const result = correctAnswers(game, numOne, numTwo, operands(countAnswer));
+    if (Answer === String(result)) {
       console.log('Correct!');
       rightAnswer += 1;
       countAnswer += 1;
@@ -96,5 +93,4 @@ export const toGame = (userName, game) => {
     }
   }
   if (rightAnswer === 3) console.log(`Congratulations, ${userName}`);
-
 };
