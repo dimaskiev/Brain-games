@@ -1,6 +1,6 @@
 {
     "name": "brain-games-dimaskiev",
-    "version": "1.2.6",
+    "version": "1.2.65",
     "description": "",
     "main": "dist/index.js",
     "bin": {
