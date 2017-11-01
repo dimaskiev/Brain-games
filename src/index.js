@@ -33,6 +33,8 @@ const makeQuestion = (game, numOne, numTwo, operand) => {
       return numOne;
     case 'calc':
       return `${numOne} ${operand} ${numTwo}`;
+    case 'gcd':
+      return `${numOne} ${numTwo}`;
     default:
       break;
   }
@@ -59,6 +61,23 @@ const getResultCals = (numOne, numTwo, operand) => {
   return numOne / numTwo;
 };
 
+const getResultGcd = (numOne, numTwo) => {
+  const getGcd = (numberOne, numberTwo, count, gmc) => {
+    const counter = count;
+    if ((counter === numberOne) || (counter === numberTwo)) return gmc;
+    // if (gmc === numberTwo) return numberTwo;
+    // if (gmc === numberOne) return numberOne;
+    if (((numberOne % counter) === 0) && (numberTwo % counter) === 0) {
+      return getGcd(numberOne, numberTwo, counter + 1, counter);
+    }
+    return getGcd(numberOne, numberTwo, counter + 1, gmc);
+  };
+  const count = 1;
+  const gmc = 1;
+  if ((numOne === 0) || (numTwo === 0)) return 0;
+  return getGcd(numOne, numTwo, count, gmc);
+};
+
 const correctAnswers = (game, numOne, numTwo, operand) => {
   switch (game) {
     case 'even': {
@@ -66,6 +85,9 @@ const correctAnswers = (game, numOne, numTwo, operand) => {
     }
     case 'calc': {
       return getResultCals(numOne, numTwo, operand);
+    }
+    case 'gcd': {
+      return getResultGcd(numOne, numTwo);
     }
     default:
       break;
