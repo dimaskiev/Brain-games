@@ -1,11 +1,13 @@
 {
     "name": "brain-games-dimaskiev",
-    "version": "1.2.65",
+    "version": "1.2.66",
     "description": "",
     "main": "dist/index.js",
     "bin": {
         "brain-games": "dist/bin/brain-games.js",
-        "brain-even": "dist/bin/brain-even.js"
+        "brain-even": "dist/bin/brain-even.js",
+        "brain-calc": "dist/bin/brain-calc.js"
+        
     },
     "scripts": {
         "babel-node": "babel-node",
@@ -30,9 +32,8 @@
         "babel-preset-env": "^1.6.1",
         "babel-preset-stage-0": "^6.24.1",
         "eslint": "^4.10.0",
-        "eslint-config-airbnb-base": "^12.1.0",        
+        "eslint-config-airbnb-base": "^12.1.0",
         "eslint-plugin-import": "^2.8.0"
-
     },
     "dependencies": {
         "readline-sync": "^1.4.7"
