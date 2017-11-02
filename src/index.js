@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-
+/* greeting and ask name user */
 export const greeting = (game) => {
   console.log('Welcome to the Brain Games!');
   console.log('');
@@ -9,108 +9,49 @@ export const greeting = (game) => {
   return userName;
 };
 
-export const printResult = (result, Answer, userName) => {
+/* print result */
+const printResult = (result, Answer, userName) => {
   console.log(`"${Answer}" is wrong answer ;(. Correct answer was "${result}"`);
   console.log(`Let's try again, ${userName}`);
 };
 
-export const getNumber = () => {
+/* get random numbers */
+export const getNumbers = (n) => {
   const date = new Date();
-  const number = Math.floor((Math.random(1) * 50) + (date.getDate() * 5));
+  const number = [];
+  for (let i = 0; i < n; i += 1) {
+    number[i] = Math.floor((Math.random(1) * 150) + (date.getDate() * (150 / 10)));
+  }
   return number;
 };
 
-export const isEven = (num) => {
-  if ((num % 2) === 0) return 'yes';
-  return 'no';
-};
-
+/* get answer */
 const getAnswer = () => readlineSync.question('Answer: ');
 
-const makeQuestion = (game, numOne, numTwo, operand) => {
-  switch (game) {
-    case 'even':
-      return numOne;
-    case 'calc':
-      return `${numOne} ${operand} ${numTwo}`;
-    case 'gcd':
-      return `${numOne} ${numTwo}`;
-    default:
-      break;
-  }
-  return numOne;
+
+/* Сheck the correct answer */
+const isRightAnswer = (result, answer) => {
+  if (result === answer) return true;
+  return false;
 };
 
-const operands = (count) => {
-  if (count === 1) return '+';
-  else if (count === 2) return '-';
-  return '*';
-};
+/* main function */
 
-const getResultCals = (numOne, numTwo, operand) => {
-  switch (operand) {
-    case '+':
-      return numOne + numTwo;
-    case '-':
-      return numOne - numTwo;
-    case '*':
-      return numOne * numTwo;
-    default:
-      break;
-  }
-  return numOne / numTwo;
-};
-
-const getResultGcd = (numOne, numTwo) => {
-  const getGcd = (numberOne, numberTwo, count, gmc) => {
-    const counter = count;
-    if ((counter === numberOne) || (counter === numberTwo)) return gmc;
-    // if (gmc === numberTwo) return numberTwo;
-    // if (gmc === numberOne) return numberOne;
-    if (((numberOne % counter) === 0) && (numberTwo % counter) === 0) {
-      return getGcd(numberOne, numberTwo, counter + 1, counter);
-    }
-    return getGcd(numberOne, numberTwo, counter + 1, gmc);
-  };
-  const count = 1;
-  const gmc = 1;
-  if ((numOne === 0) || (numTwo === 0)) return 0;
-  return getGcd(numOne, numTwo, count, gmc);
-};
-
-const correctAnswers = (game, numOne, numTwo, operand) => {
-  switch (game) {
-    case 'even': {
-      return isEven(numOne);
-    }
-    case 'calc': {
-      return getResultCals(numOne, numTwo, operand);
-    }
-    case 'gcd': {
-      return getResultGcd(numOne, numTwo);
-    }
-    default:
-      break;
-  }
-  return true;
-};
-
-export const toGame = (userName, game) => {
+export const toGames = (userName, questions, answers) => {
   let rightAnswer = 0;
-  let countAnswer = 1;
-  while (countAnswer <= 3) {
-    const numOne = getNumber();
-    const numTwo = getNumber();
-    const question = makeQuestion(game, numOne, numTwo, operands(countAnswer));
+  let countAnswer = 0;
+  const gameCount = questions.length;
+  while (countAnswer < gameCount) {
+    const question = questions[countAnswer];
     console.log(`Question: ${question}`);
-    const Answer = getAnswer(game);
-    const result = correctAnswers(game, numOne, numTwo, operands(countAnswer));
-    if (Answer === String(result)) {
+    const Answer = getAnswer();
+    const result = isRightAnswer(String(answers[countAnswer]), String(Answer));
+    if (result) {
       console.log('Correct!');
       rightAnswer += 1;
       countAnswer += 1;
     } else {
-      printResult(result, Answer, userName);
+      printResult(answers[countAnswer], Answer, userName);
       return;
     }
   }
