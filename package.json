@@ -1,6 +1,6 @@
 {
     "name": "brain-games-dimaskiev",
-    "version": "1.2.8",
+    "version": "1.2.9",
     "description": "",
     "main": "dist/index.js",
     "bin": {
@@ -14,8 +14,10 @@
     "scripts": {
         "babel-node": "babel-node",
         "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+        "work": "NODE_ENV=production babel src --out-dir dist --source-maps inline --watch",
         "prepublish": "npm run build",
         "eslint": "eslint"
+        
     },
     "repository": {
         "type": "git",

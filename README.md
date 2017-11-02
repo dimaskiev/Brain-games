@@ -10,6 +10,15 @@
 
 *For install:*
 
-1. `npm install brain-games-dimaskiev`
-2. install dependencies `make install`
-3. for start game `brain-games-dimaskiev`
+#### windows
+`npm install -g brain-games-dimaskiev`
+#### linux/ubuntu
+`sudo npm install -g brain-games-dimaskiev`
+#### for start game
+`brain-even` for Even
+`brain-calc` for Calc
+`brain-gdc` for Gdc
+`brain-balance` for Balance
+#### for developers
+1. `git clone https://github.com/dimaskiev/project-lvl1-s160`
+2. `make install`
