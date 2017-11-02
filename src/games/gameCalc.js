@@ -1,4 +1,5 @@
-import { greeting, toGames, getNumbers } from '..';
+import { playGame } from '..';
+import {getNumbers } from '../common/common.js'; 
 
 const getResultCals = (numOne, numTwo, operand) => {
   const answer = [];
@@ -18,6 +19,8 @@ const getResultCals = (numOne, numTwo, operand) => {
         question[i] = `${numOne[i]} * ${numTwo[i]}`;
         break;
       default:
+        answer[i] = (numOne[i] / numTwo[i]).toFixed(2);
+        question[i] = `${numOne[i]} / ${numTwo[i]}`;
         break;
     }
   }
@@ -28,9 +31,9 @@ const getResultCals = (numOne, numTwo, operand) => {
 export default () => {
   const gameManual = 'What is the result of the expression?';
   const gameCycles = 3;
-  const numbersLeft = getNumbers(gameCycles);
-  const numbersRight = getNumbers(gameCycles);
+  const numberOne = getNumbers(gameCycles);
+  const numberTwo = getNumbers(gameCycles);
   const operand = ['+', '-', '*'];
-  const rightAnswers = getResultCals(numbersLeft, numbersRight, operand);
-  toGames(greeting(gameManual), rightAnswers.question, rightAnswers.answer);
+  const rightAnswers = getResultCals(numberOne, numberTwo, operand);
+  playGame(gameManual, rightAnswers.question, rightAnswers.answer, gameCycles);
 };

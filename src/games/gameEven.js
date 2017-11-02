@@ -1,4 +1,5 @@
-import { greeting, toGames, getNumbers } from '..';
+import { playGame } from '..';
+import {getNumbers } from '../common/common.js'; 
 
 const isEven = (num) => {
   if ((num % 2) === 0) return 'yes';
@@ -10,5 +11,5 @@ export default () => {
   const gameCycles = 3;
   const question = getNumbers(gameCycles);
   const rightAnswers = question.map(isEven);
-  toGames(greeting(gameManual), question, rightAnswers);
+  playGame(gameManual, question, rightAnswers, gameCycles);
 };

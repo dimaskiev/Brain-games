@@ -1,4 +1,5 @@
-import { greeting, toGames, getNumbers } from '..';
+import { playGame } from '..';
+import {getNumbers } from '../common/common.js'; 
 
 const getBalanceNumber = (numOne) => {
   if (numOne < 10) return numOne;
@@ -37,5 +38,5 @@ export default () => {
   const gameCycles = 3;
   const numbers = getNumbers(gameCycles);
   const rightAnswers = numbers.map(getBalanceNumber);
-  toGames(greeting(gameManual), numbers, rightAnswers);
+  playGame(gameManual, numbers, rightAnswers, gameCycles);
 };

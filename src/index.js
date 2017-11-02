@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
 /* greeting and ask name user */
-export const greeting = (game) => {
+const greeting = (gameManual) => {
   console.log('Welcome to the Brain Games!');
   console.log('');
-  console.log(game);
+  console.log(gameManual);
   const userName = readlineSync.question('What\'s your name?: ');
   return userName;
 };
@@ -15,15 +15,7 @@ const printResult = (result, Answer, userName) => {
   console.log(`Let's try again, ${userName}`);
 };
 
-/* get random numbers */
-export const getNumbers = (n) => {
-  const date = new Date();
-  const number = [];
-  for (let i = 0; i < n; i += 1) {
-    number[i] = Math.floor((Math.random(1) * 150) + (date.getDate() * (150 / 10)));
-  }
-  return number;
-};
+
 
 /* get answer */
 const getAnswer = () => readlineSync.question('Answer: ');
@@ -37,10 +29,11 @@ const isRightAnswer = (result, answer) => {
 
 /* main function */
 
-export const toGames = (userName, questions, answers) => {
+export const playGame = (gameManual, questions, answers, countCycles) => {
   let rightAnswer = 0;
   let countAnswer = 0;
-  const gameCount = questions.length;
+  const userName = greeting(gameManual);
+  const gameCount = countCycles;
   while (countAnswer < gameCount) {
     const question = questions[countAnswer];
     console.log(`Question: ${question}`);
@@ -55,5 +48,5 @@ export const toGames = (userName, questions, answers) => {
       return;
     }
   }
-  if (rightAnswer === 3) console.log(`Congratulations, ${userName}`);
+  if (rightAnswer === gameCount) console.log(`Congratulations, ${userName}`);
 };
