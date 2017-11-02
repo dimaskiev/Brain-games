@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 /* greeting and ask name user */
-const greeting = (gameManual) => {
+export const greeting = (gameManual) => {
   console.log('Welcome to the Brain Games!');
   console.log('');
   console.log(gameManual);
@@ -10,12 +10,10 @@ const greeting = (gameManual) => {
 };
 
 /* print result */
-const printResult = (result, Answer, userName) => {
+export const printResult = (result, Answer, userName) => {
   console.log(`"${Answer}" is wrong answer ;(. Correct answer was "${result}"`);
   console.log(`Let's try again, ${userName}`);
 };
-
-
 
 /* get answer */
 const getAnswer = () => readlineSync.question('Answer: ');

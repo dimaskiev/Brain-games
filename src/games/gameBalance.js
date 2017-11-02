@@ -1,5 +1,5 @@
 import { playGame } from '..';
-import {getNumbers } from '../common/common.js'; 
+import { getNumbers } from '../common/common';
 
 const getBalanceNumber = (numOne) => {
   if (numOne < 10) return numOne;

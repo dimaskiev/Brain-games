@@ -1,7 +1,5 @@
 import { playGame } from '..';
-import {getNumbers, getResultGcd } from '../common/common.js'; 
-
-
+import { getNumbers, getResultGcd } from '../common/common';
 
 export default () => {
   const gameManual = 'Find the greatest common divisor of given numbers.';

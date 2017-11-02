@@ -1,5 +1,5 @@
 import { playGame } from '..';
-import {getNumbers } from '../common/common.js'; 
+import { getNumbers } from '../common/common';
 
 const isEven = (num) => {
   if ((num % 2) === 0) return 'yes';
