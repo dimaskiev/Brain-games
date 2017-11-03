@@ -1,5 +1,5 @@
 /* get random numbers */
-export const getNumbers = (n) => {
+export const getRandomNumber = (n) => {
   const date = new Date();
   const number = [];
   for (let i = 0; i < n; i += 1) {
@@ -8,7 +8,7 @@ export const getNumbers = (n) => {
   return number;
 };
 
-export const getResultGcd = (numOne, numTwo) => {
+export const findGcd = (numOne, numTwo) => {
   const getGcd = (numberOne, numberTwo, count, gmc) => {
     const counter = count;
     if ((counter === numberOne) || (counter === numberTwo)) return gmc;

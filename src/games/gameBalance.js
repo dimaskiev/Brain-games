@@ -1,5 +1,5 @@
 import { playGame } from '..';
-import { getNumbers } from '../common/common';
+import { getRandomNumber } from '../common/common';
 
 const getBalanceNumber = (numOne) => {
   if (numOne < 10) return numOne;
@@ -36,7 +36,8 @@ const getBalanceNumber = (numOne) => {
 export default () => {
   const gameManual = 'Balance the given number.';
   const gameCycles = 3;
-  const numbers = getNumbers(gameCycles);
+  const rightAnswersCount = 3;
+  const numbers = getRandomNumber(gameCycles);
   const rightAnswers = numbers.map(getBalanceNumber);
-  playGame(gameManual, numbers, rightAnswers, gameCycles);
+  playGame(gameManual, numbers, rightAnswers, gameCycles, rightAnswersCount);
 };

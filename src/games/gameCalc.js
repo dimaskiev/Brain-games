@@ -1,5 +1,5 @@
 import { playGame } from '..';
-import { getNumbers } from '../common/common';
+import { getRandomNumber } from '../common/common';
 
 const getResultCals = (numOne, numTwo, operand) => {
   const answer = [];
@@ -31,9 +31,10 @@ const getResultCals = (numOne, numTwo, operand) => {
 export default () => {
   const gameManual = 'What is the result of the expression?';
   const gameCycles = 3;
-  const numberOne = getNumbers(gameCycles);
-  const numberTwo = getNumbers(gameCycles);
+  const rightAnswersCount = 3;
+  const numberOne = getRandomNumber(gameCycles);
+  const numberTwo = getRandomNumber(gameCycles);
   const operand = ['+', '-', '*'];
   const rightAnswers = getResultCals(numberOne, numberTwo, operand);
-  playGame(gameManual, rightAnswers.question, rightAnswers.answer, gameCycles);
+  playGame(gameManual, rightAnswers.question, rightAnswers.answer, gameCycles, rightAnswersCount);
 };

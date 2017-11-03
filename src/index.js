@@ -27,7 +27,7 @@ const isRightAnswer = (result, answer) => {
 
 /* main function */
 
-export const playGame = (gameManual, questions, answers, countCycles) => {
+export const playGame = (gameManual, questions, answers, countCycles, rightAnswersCount) => {
   let rightAnswer = 0;
   let countAnswer = 0;
   const userName = greeting(gameManual);
@@ -46,5 +46,5 @@ export const playGame = (gameManual, questions, answers, countCycles) => {
       return;
     }
   }
-  if (rightAnswer === gameCount) console.log(`Congratulations, ${userName}`);
+  if (rightAnswer === rightAnswersCount) console.log(`Congratulations, ${userName}`);
 };

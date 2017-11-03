@@ -1,11 +1,12 @@
 import { playGame } from '..';
-import { getNumbers, getResultGcd } from '../common/common';
+import { getRandomNumber, findGcd } from '../common/common';
 
 export default () => {
   const gameManual = 'Find the greatest common divisor of given numbers.';
   const gameCycles = 3;
-  const numbersOne = getNumbers(gameCycles);
-  const numbersTwo = getNumbers(gameCycles);
-  const rightAnswers = getResultGcd(numbersOne, numbersTwo);
-  playGame(gameManual, rightAnswers.question, rightAnswers.answers, gameCycles);
+  const rightAnswersCount = 3;
+  const numbersOne = getRandomNumber(gameCycles);
+  const numbersTwo = getRandomNumber(gameCycles);
+  const rightAnswers = findGcd(numbersOne, numbersTwo);
+  playGame(gameManual, rightAnswers.question, rightAnswers.answers, gameCycles, rightAnswersCount);
 };
