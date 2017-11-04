@@ -1,16 +1,5 @@
 import { playGames } from '..';
-import { getRandomNumber, makeQuestion } from '../common/common';
-
-
-const isEven = (num) => {
-  if ((num % 2) === 0) return true;
-  return false;
-};
-
-const getRightAnswer = (num) => {
-  if (num === true) return 'yes';
-  return 'no';
-};
+import { getRandomNumber, isEven, getRightAnswer, makeQuestion } from '../common/common';
 
 const gameInit = () => {
   const oneNumber = getRandomNumber();
@@ -19,8 +8,7 @@ const gameInit = () => {
   return makeQuestion(question, answer);
 };
 
-
 export default () => {
-  const gameManual = 'Answer "yes" if number even otherwise answer "no".';
+  const gameManual = 'Find the greatest common divisor of given numbers.';
   playGames(gameManual, gameInit);
 };
