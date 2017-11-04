@@ -8,21 +8,10 @@ export const getRandomNumber = () => {
 };
 
 export const findGcd = (numOne, numTwo) => {
-  const getGcd = (numberOne, numberTwo) => {
-    let numFirst = numberOne;
-    let numSec = numberTwo;
-    while (numFirst !== numSec) {
-      if (numFirst > numSec) {
-        numFirst -= numSec;
-      } else {
-        numSec -= numFirst;
-      }
-    }
-    return numFirst;
-  };
-  if ((numOne === 0) || (numTwo === 0)) return 0;
-  const answers = getGcd(numOne, numTwo);
-  return answers;
+  if (numTwo === 0) {
+    return numOne;
+  }
+  return findGcd(numTwo, numOne % numTwo);
 };
 
 export const makeQuestion = (question, answer) => {
