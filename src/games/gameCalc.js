@@ -1,40 +1,50 @@
-import { playGame } from '..';
-import { getRandomNumber } from '../common/common';
+import { playGames } from '..';
+import { getRandomNumber, makeQuestion } from '../common/common';
 
-const getResultCals = (numOne, numTwo, operand) => {
-  const answer = [];
-  const question = [];
-  for (let i = 0; i < numOne.length; i += 1) {
-    switch (operand[i]) {
-      case '+':
-        answer[i] = numOne[i] + numTwo[i];
-        question[i] = `${numOne[i]} + ${numTwo[i]}`;
-        break;
-      case '-':
-        answer[i] = numOne[i] - numTwo[i];
-        question[i] = `${numOne[i]} - ${numTwo[i]}`;
-        break;
-      case '*':
-        answer[i] = numOne[i] * numTwo[i];
-        question[i] = `${numOne[i]} * ${numTwo[i]}`;
-        break;
-      default:
-        answer[i] = (numOne[i] / numTwo[i]).toFixed(2);
-        question[i] = `${numOne[i]} / ${numTwo[i]}`;
-        break;
-    }
+const getRandomOperand = () => {
+  let rand = 1 + (Math.random() * 3);
+  rand = Math.floor(rand);
+  switch (rand) {
+    case 1:
+      return '+';
+    case 2:
+      return '-';
+    case 3:
+      return '*';
+    default:
+      return '/';
   }
-  return { answer, question };
 };
 
+const getResultCals = (oneNumber, twoNumber, operand) => {
+  let answer = 0;
+  switch (operand) {
+    case '+':
+      answer = oneNumber + twoNumber;
+      break;
+    case '-':
+      answer = oneNumber - twoNumber;
+      break;
+    case '*':
+      answer = oneNumber * twoNumber;
+      break;
+    default:
+      answer = (oneNumber / twoNumber).toFixed(2);
+      break;
+  }
+  return answer;
+};
+
+const dataGame = () => {
+  const oneNumber = getRandomNumber();
+  const twoNumber = getRandomNumber();
+  const operand = getRandomOperand();
+  const answer = getResultCals(oneNumber, twoNumber, operand);
+  const question = `${oneNumber} ${operand} ${twoNumber}`;
+  return makeQuestion(question, answer);
+};
 
 export default () => {
-  const gameManual = 'What is the result of the expression?';
-  const gameCycles = 3;
-  const rightAnswersCount = 3;
-  const numberOne = getRandomNumber(gameCycles);
-  const numberTwo = getRandomNumber(gameCycles);
-  const operand = ['+', '-', '*'];
-  const rightAnswers = getResultCals(numberOne, numberTwo, operand);
-  playGame(gameManual, rightAnswers.question, rightAnswers.answer, gameCycles, rightAnswersCount);
+  const gameManual = 'Find the greatest common divisor of given numbers.';
+  playGames(gameManual, dataGame);
 };

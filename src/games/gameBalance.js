@@ -1,5 +1,5 @@
-import { playGame } from '..';
-import { getRandomNumber } from '../common/common';
+import { playGames } from '..';
+import { getRandomNumber, makeQuestion } from '../common/common';
 
 const getBalanceNumber = (numOne) => {
   if (numOne < 10) return numOne;
@@ -32,12 +32,15 @@ const getBalanceNumber = (numOne) => {
   return newStr;
 };
 
+const dataGame = () => {
+  const oneNumber = getRandomNumber();
+  const answer = getBalanceNumber(oneNumber);
+  const question = `${oneNumber}`;
+  return makeQuestion(question, answer);
+};
+
 
 export default () => {
-  const gameManual = 'Balance the given number.';
-  const gameCycles = 3;
-  const rightAnswersCount = 3;
-  const numbers = getRandomNumber(gameCycles);
-  const rightAnswers = numbers.map(getBalanceNumber);
-  playGame(gameManual, numbers, rightAnswers, gameCycles, rightAnswersCount);
+  const gameManual = 'Find the greatest common divisor of given numbers.';
+  playGames(gameManual, dataGame);
 };
