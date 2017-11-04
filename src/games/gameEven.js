@@ -21,6 +21,6 @@ const gameInit = () => {
 
 
 export default () => {
-  const gameManual = 'Find the greatest common divisor of given numbers.';
+  const gameManual = 'Answer "yes" if number even otherwise answer "no".';
   playGames(gameManual, gameInit);
 };
