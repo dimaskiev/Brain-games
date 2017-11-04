@@ -2,7 +2,7 @@ import { playGames } from '..';
 import { getRandomNumber, findGcd, makeQuestion } from '../common/common';
 
 
-const dataGame = () => {
+const gameInit = () => {
   const oneNumber = getRandomNumber();
   const twoNumber = getRandomNumber();
   const answer = findGcd(oneNumber, twoNumber);
@@ -13,5 +13,5 @@ const dataGame = () => {
 
 export default () => {
   const gameManual = 'Find the greatest common divisor of given numbers.';
-  playGames(gameManual, dataGame);
+  playGames(gameManual, gameInit);
 };

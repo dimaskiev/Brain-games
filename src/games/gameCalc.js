@@ -35,7 +35,7 @@ const getResultCals = (oneNumber, twoNumber, operand) => {
   return answer;
 };
 
-const dataGame = () => {
+const gameInit = () => {
   const oneNumber = getRandomNumber();
   const twoNumber = getRandomNumber();
   const operand = getRandomOperand();
@@ -46,5 +46,5 @@ const dataGame = () => {
 
 export default () => {
   const gameManual = 'Find the greatest common divisor of given numbers.';
-  playGames(gameManual, dataGame);
+  playGames(gameManual, gameInit);
 };

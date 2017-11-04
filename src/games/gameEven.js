@@ -7,14 +7,14 @@ const isEven = (num) => {
   return false;
 };
 
-const getEven = (num) => {
+const getRightAnswer = (num) => {
   if (num === true) return 'yes';
   return 'no';
 };
 
-const dataGame = () => {
+const gameInit = () => {
   const oneNumber = getRandomNumber();
-  const answer = getEven(isEven(oneNumber));
+  const answer = getRightAnswer(isEven(oneNumber));
   const question = `${oneNumber}`;
   return makeQuestion(question, answer);
 };
@@ -22,5 +22,5 @@ const dataGame = () => {
 
 export default () => {
   const gameManual = 'Find the greatest common divisor of given numbers.';
-  playGames(gameManual, dataGame);
+  playGames(gameManual, gameInit);
 };

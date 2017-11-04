@@ -32,7 +32,7 @@ const getBalanceNumber = (numOne) => {
   return newStr;
 };
 
-const dataGame = () => {
+const gameInit = () => {
   const oneNumber = getRandomNumber();
   const answer = getBalanceNumber(oneNumber);
   const question = `${oneNumber}`;
@@ -42,5 +42,5 @@ const dataGame = () => {
 
 export default () => {
   const gameManual = 'Find the greatest common divisor of given numbers.';
-  playGames(gameManual, dataGame);
+  playGames(gameManual, gameInit);
 };
