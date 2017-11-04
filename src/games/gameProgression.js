@@ -1,5 +1,7 @@
+import { cons } from 'hexlet-pairs';
 import { playGames } from '..';
-import { getRandomNumber, makeQuestion } from '../common/common';
+import { getRandomNumber } from '../common/common';
+
 
 const getQuestion = (startNum, step, lengthProgression, hiddenIndex) => {
   const progressionArray = [];
@@ -19,7 +21,7 @@ const gameInit = () => {
   const lengthProgression = 10;
   const answer = startNum + (hiddenIndexOfNum * stepProgression);
   const question = getQuestion(startNum, stepProgression, lengthProgression, hiddenIndexOfNum);
-  return makeQuestion(question, answer);
+  return cons(question, answer);
 };
 
 export default () => {

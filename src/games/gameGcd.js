@@ -1,5 +1,6 @@
+import { cons } from 'hexlet-pairs';
 import { playGames } from '..';
-import { getRandomNumber, findGcd, makeQuestion } from '../common/common';
+import { getRandomNumber, findGcd } from '../common/common';
 
 
 const gameInit = () => {
@@ -7,7 +8,7 @@ const gameInit = () => {
   const twoNumber = getRandomNumber();
   const answer = findGcd(oneNumber, twoNumber);
   const question = `${oneNumber} ${twoNumber}`;
-  return makeQuestion(question, answer);
+  return cons(question, answer);
 };
 
 

@@ -1,11 +1,13 @@
+import { cons } from 'hexlet-pairs';
 import { playGames } from '..';
-import { getRandomNumber, isPrime, getRightAnswer, makeQuestion } from '../common/common';
+import { getRandomNumber, isPrime, getRightAnswer } from '../common/common';
+
 
 const gameInit = () => {
   const oneNumber = getRandomNumber();
   const answer = getRightAnswer(isPrime(oneNumber));
   const question = `${oneNumber}`;
-  return makeQuestion(question, answer);
+  return cons(question, answer);
 };
 
 

@@ -1,5 +1,3 @@
-import readlineSync from 'readline-sync';
-
 /* get random numbers */
 export const getRandomNumber = () => {
   const date = new Date();
@@ -31,16 +29,4 @@ export const isEven = (num) => {
 export const getRightAnswer = (num) => {
   if (num === true) return 'yes';
   return 'no';
-};
-
-
-export const makeQuestion = (question, answer) => {
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (userAnswer === String(answer)) {
-    console.log('Correct!');
-  } else {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.`);
-  }
-  return (userAnswer === String(answer));
 };

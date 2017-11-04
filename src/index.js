@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from 'hexlet-pairs';
 
 /* greeting and ask name user */
 export const greeting = (gameManual) => {
@@ -9,6 +10,11 @@ export const greeting = (gameManual) => {
   return userName;
 };
 
+export const printResult = (result, Answer, userName) => {
+  console.log(`"${Answer}" is wrong answer ;(. Correct answer was "${result}"`);
+  console.log(`Let's try again, ${userName}`);
+};
+
 /* main function */
 
 export const playGames = (gameManual, getAnswer) => {
@@ -16,14 +22,20 @@ export const playGames = (gameManual, getAnswer) => {
   let countAnswer = 0;
   const userName = greeting(gameManual);
   const gameCount = 3;
-  let rightAnswer = true;
   while (countAnswer < gameCount) {
-    rightAnswer = getAnswer();
-    console.log(rightAnswer);
-    if (rightAnswer) {
+    const dataGame = getAnswer();
+    const rightAnswer = cdr(dataGame);
+    const question = car(dataGame);
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer === String(rightAnswer)) {
+      console.log('Correct!');
       rightAnswerUser += 1;
       countAnswer += 1;
-    } else countAnswer = gameCount;
+    } else {
+      printResult(rightAnswer, userAnswer, userName);
+      countAnswer = gameCount;
+    }
   }
   if (rightAnswerUser === gameCount) console.log(`Congratulations, ${userName}`);
 };

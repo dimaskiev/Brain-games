@@ -1,5 +1,7 @@
+import { cons } from 'hexlet-pairs';
 import { playGames } from '..';
-import { getRandomNumber, makeQuestion } from '../common/common';
+import { getRandomNumber } from '../common/common';
+
 
 const getRandomOperand = () => {
   let rand = 1 + (Math.random() * 3);
@@ -41,7 +43,7 @@ const gameInit = () => {
   const operand = getRandomOperand();
   const answer = getResultCals(oneNumber, twoNumber, operand);
   const question = `${oneNumber} ${operand} ${twoNumber}`;
-  return makeQuestion(question, answer);
+  return cons(question, answer);
 };
 
 export default () => {

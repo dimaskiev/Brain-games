@@ -1,5 +1,7 @@
+import { cons } from 'hexlet-pairs';
 import { playGames } from '..';
-import { getRandomNumber, makeQuestion } from '../common/common';
+import { getRandomNumber } from '../common/common';
+
 
 const getBalanceNumber = (numOne) => {
   if (numOne < 10) return numOne;
@@ -36,7 +38,7 @@ const gameInit = () => {
   const oneNumber = getRandomNumber();
   const answer = getBalanceNumber(oneNumber);
   const question = `${oneNumber}`;
-  return makeQuestion(question, answer);
+  return cons(question, answer);
 };
 
 
