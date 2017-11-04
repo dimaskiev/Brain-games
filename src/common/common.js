@@ -3,7 +3,7 @@ import readlineSync from 'readline-sync';
 /* get random numbers */
 export const getRandomNumber = () => {
   const date = new Date();
-  const number = Math.floor((Math.random(1) * 150) + (date.getDate() * (150 / 10)));
+  const number = Math.floor((Math.random(1) * 50) + (date.getDate() * 5));
   return number;
 };
 
