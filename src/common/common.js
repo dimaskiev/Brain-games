@@ -8,18 +8,20 @@ export const getRandomNumber = () => {
 };
 
 export const findGcd = (numOne, numTwo) => {
-  const getGcd = (numberOne, numberTwo, count, gmc) => {
-    const counter = count;
-    if ((counter === numberOne) || (counter === numberTwo)) return gmc;
-    if (((numberOne % counter) === 0) && (numberTwo % counter) === 0) {
-      return getGcd(numberOne, numberTwo, counter + 1, counter);
+  const getGcd = (numberOne, numberTwo) => {
+    let numFirst = numberOne;
+    let numSec = numberTwo;
+    while (numFirst !== numSec) {
+      if (numFirst > numSec) {
+        numFirst -= numSec;
+      } else {
+        numSec -= numFirst;
+      }
     }
-    return getGcd(numberOne, numberTwo, counter + 1, gmc);
+    return numFirst;
   };
-  const count = 1;
-  const gmc = 1;
   if ((numOne === 0) || (numTwo === 0)) return 0;
-  const answers = getGcd(numOne, numTwo, count, gmc);
+  const answers = getGcd(numOne, numTwo);
   return answers;
 };
 

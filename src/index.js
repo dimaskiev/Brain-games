@@ -9,12 +9,6 @@ export const greeting = (gameManual) => {
   return userName;
 };
 
-/* print result */
-export const printResult = (result, Answer, userName) => {
-  console.log(`"${Answer}" is wrong answer ;(. Correct answer was "${result}"`);
-  console.log(`Let's try again, ${userName}`);
-};
-
 /* main function */
 
 export const playGames = (gameManual, getAnswer) => {
