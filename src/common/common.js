@@ -26,7 +26,7 @@ export const isEven = (num) => {
   return false;
 };
 
-export const getRightAnswer = (num) => {
-  if (num === true) return 'yes';
+export const getRightAnswer = (rightAnswer) => {
+  if (rightAnswer === true) return 'yes';
   return 'no';
 };

@@ -34,7 +34,7 @@ export const playGames = (gameManual, getAnswer) => {
       countAnswer += 1;
     } else {
       printResult(rightAnswer, userAnswer, userName);
-      countAnswer = gameCount;
+      return;
     }
   }
   if (rightAnswerUser === gameCount) console.log(`Congratulations, ${userName}`);
