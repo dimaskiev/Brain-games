@@ -24,8 +24,12 @@
 
 `brain-balance` for Balance
 
+`brain-prime` for Prime
+
+`brain-progression` for Progression
+
 #### for developers
-1. `git clone https://github.com/dimaskiev/project-lvl1-s160`
+1. `git clone https://github.com/dimaskiev/Brain-games BrainGames && cd BrainGames
 2. `make install`
 
 
