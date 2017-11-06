@@ -1,6 +1,6 @@
 {
     "name": "brain-games-dimaskiev",
-    "version": "1.3.98",
+    "version": "1.4.0",
     "description": "",
     "main": "dist/index.js",
     "bin": {
@@ -38,10 +38,10 @@
         "eslint": "^4.10.0",
         "eslint-config-airbnb-base": "^12.1.0",
         "eslint-plugin-import": "^2.8.0"
-        
+
     },
     "dependencies": {
         "readline-sync": "^1.4.7",
-		"hexlet-pairs": "^1.0.5"
+        "hexlet-pairs": "^1.0.5"
     }
 }
