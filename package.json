@@ -1,6 +1,6 @@
 {
     "name": "brain-games-dimaskiev",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "",
     "main": "dist/index.js",
     "bin": {
@@ -21,14 +21,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dimaskiev/project-lvl1-s160.git"
+        "url": "git+https://github.com/dimaskiev/brain-games.git"
     },
     "author": "romanchuk",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/dimaskiev/project-lvl1-s160/issues"
+        "url": "https://github.com/dimaskiev/brain-games/issues"
     },
-    "homepage": "https://github.com/dimaskiev/project-lvl1-s160#readme",
+    "homepage": "https://github.com/dimaskiev/brain-games#readme",
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-core": "^6.26.0",
@@ -38,10 +38,9 @@
         "eslint": "^4.10.0",
         "eslint-config-airbnb-base": "^12.1.0",
         "eslint-plugin-import": "^2.8.0"
-
     },
     "dependencies": {
-        "readline-sync": "^1.4.7",
-        "hexlet-pairs": "^1.0.5"
+        "hexlet-pairs": "^1.0.5",
+        "readline-sync": "^1.4.7"
     }
 }
