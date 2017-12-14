@@ -17,7 +17,7 @@ export const printResult = (result, Answer, userName) => {
 
 /* main function */
 
-export const playGames = (gameManual, getAnswer) => {
+export const start = (gameManual, getAnswer) => {
   let rightAnswerUser = 0;
   let countAnswer = 0;
   const userName = greeting(gameManual);
