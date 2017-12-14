@@ -1,6 +1,6 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/f6bf207097582e502556/maintainability)](https://codeclimate.com/github/dimaskiev/Brain-games/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/550dcca9a0c99ae0a8ee/maintainability)](https://codeclimate.com/github/dimaskiev/Brain-games/maintainability)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/f6bf207097582e502556/test_coverage)](https://codeclimate.com/github/dimaskiev/Brain-games/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/550dcca9a0c99ae0a8ee/test_coverage)](https://codeclimate.com/github/dimaskiev/Brain-games/test_coverage)
 
 [![Build Status](https://travis-ci.org/dimaskiev/Brain-games.svg?branch=master)](https://travis-ci.org/dimaskiev/Brain-games)
 
