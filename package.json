@@ -31,16 +31,16 @@
     "homepage": "https://github.com/dimaskiev/brain-games#readme",
     "devDependencies": {
         "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.0",
-        "babel-eslint": "^8.0.1",
-        "babel-preset-env": "^1.6.1",
+        "babel-core": "^6.26.3",
+        "babel-eslint": "^8.2.6",
+        "babel-preset-env": "^1.7.0",
         "babel-preset-stage-0": "^6.24.1",
-        "eslint": "^4.10.0",
+        "eslint": "^4.19.1",
         "eslint-config-airbnb-base": "^12.1.0",
-        "eslint-plugin-import": "^2.8.0"
+        "eslint-plugin-import": "^2.14.0"
     },
     "dependencies": {
-        "hexlet-pairs": "^1.0.5",
-        "readline-sync": "^1.4.7"
+        "hexlet-pairs": "^1.0.8",
+        "readline-sync": "^1.4.9"
     }
 }
